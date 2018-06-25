@@ -31,6 +31,6 @@ describe('error handling', function () {
     assert.throws(humanizing({ language: 'bad language' }), Error)
     assert.throws(humanizing({ language: '' }), Error)
     assert.throws(humanizing({ language: null }), Error)
-    assert.doesNotThrow(humanizing({ language: 'es' }), Error)
+    assert.doesNotThrow(humanizing({ language: 'ar' }), Error)
   })
 })

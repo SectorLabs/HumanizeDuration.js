@@ -144,11 +144,11 @@ describe('humanizer', function () {
     h.delimiter = '+'
     assert.equal(h(363000), '6 minutes+3 seconds')
 
-    h.language = 'es'
-    assert.equal(h(363000), '6 minutos+3 segundos')
+    h.language = 'ur'
+    assert.equal(h(363000), '6 منٹ+3 سیکنڈ')
 
     h.units = ['m']
-    assert.equal(h(363000), '6,05 minutos')
+    assert.equal(h(363000), '6.05 منٹ')
   })
 
   it('is a named function', function () {
@@ -170,8 +170,8 @@ describe('humanizer', function () {
 
     assert.equal(h(1000), '1 s')
     assert.equal(h(1000, {
-      language: 'es'
-    }), '1 segundo')
+      language: 'ur'
+    }), '1 سیکنڈ')
 
     var anotherH = humanizer({
       language: 'cool language'
@@ -225,6 +225,6 @@ describe('humanizer', function () {
 
     assert.equal(h(1000), '1 s')
     assert.equal(h(15600000), '4 h, 20 m')
-    assert.equal(h(1000, { language: 'es' }), '1 segundo')
+    assert.equal(h(1000, { language: 'ur' }), '1 سیکنڈ')
   })
 })

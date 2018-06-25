@@ -25,10 +25,10 @@
     "Abdul Jalil (https://github.com/abduljalilm94)",
     "Alex Sam (https://github.com/sam-lex)"
   ],
-  "version": "3.15.0",
+  "version": "3.15.1-sl.1",
   "description": "Convert millisecond durations to English and many other languages.",
   "main": "humanize-duration.js",
-  "homepage": "https://github.com/EvanHahn/HumanizeDuration.js",
+  "homepage": "https://github.com/SectorLabs/HumanizeDuration.js",
   "keywords": [
     "humanize",
     "duration",
@@ -50,6 +50,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/EvanHahn/HumanizeDuration.js.git"
+    "url": "https://github.com/SectorLabs/HumanizeDuration.js"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "humanize-duration",
+  "name": "@sector-labs/humanize-duration",
   "author": "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)",
   "contributors": [
     "Óli Tómas Freysson (https://github.com/olitomas)",
@@ -25,9 +25,9 @@
     "Abdul Jalil (https://github.com/abduljalilm94)",
     "Alex Sam (https://github.com/sam-lex)"
   ],
-  "version": "3.15.0",
+  "version": "3.15.1-sl.1",
   "description": "Convert millisecond durations to English and many other languages.",
-  "homepage": "https://github.com/EvanHahn/HumanizeDuration.js",
+  "homepage": "https://github.com/SectorLabs/HumanizeDuration.js",
   "main": "humanize-duration.js",
   "scripts": {
     "pretest": "standard --fix",
@@ -53,7 +53,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/EvanHahn/HumanizeDuration.js.git"
+    "url": "https://github.com/SectorLabs/HumanizeDuration.js"
   },
   "bugs": "https://github.com/EvanHahn/HumanizeDuration.js/issues",
   "license": "Unlicense",
