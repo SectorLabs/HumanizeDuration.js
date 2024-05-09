@@ -2,6 +2,9 @@
 
 ;(function () {
   var languages = {
+    //In AR, should differnaciate between 1, 2, [3-10] and the rest of the numbers.
+    // see https://github.com/EvanHahn/HumanizeDuration.js/blob/4373d00a97785321088c7a2ebcd1a5b969f3beb0/humanize-duration.js#L157 in the main repo
+
     ar: {
       y: function (c) { return c === 1 ? 'سنة' : 'سنوات' },
       mo: function (c) { return c === 1 ? 'شهر' : 'أشهر' },
