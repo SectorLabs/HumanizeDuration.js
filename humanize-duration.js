@@ -6,14 +6,14 @@
     // see https://github.com/EvanHahn/HumanizeDuration.js/blob/4373d00a97785321088c7a2ebcd1a5b969f3beb0/humanize-duration.js#L157 in the main repo
 
     ar: {
-      y: function (c) { return c === 1 ? 'سنة' : 'سنوات' },
-      mo: function (c) { return c === 1 ? 'شهر' : 'أشهر' },
-      w: function (c) { return c === 1 ? 'أسبوع' : 'أسابيع' },
-      d: function (c) { return c === 1 ? 'يوم' : 'أيام' },
-      h: function (c) { return c === 1 ? 'ساعة' : 'ساعات' },
-      m: function (c) { return c === 1 ? 'دقيقة' : 'دقائق' },
-      s: function (c) { return c === 1 ? 'ثانية' : 'ثواني' },
-      ms: function (c) { return c === 1 ? 'جزء من الثانية' : 'أجزاء من الثانية' },
+      y: function (c) { return ["سنة", "سنتان", "سنوات"][getArabicForm(c)] },
+      mo: function (c) { return ["شهر", "شهران", "أشهر"][getArabicForm(c)] },
+      w: function (c) { return ["أسبوع", "أسبوعين", "أسابيع"][getArabicForm(c)]},
+      d: function (c) { return ["يوم", "يومين", "أيام"][getArabicForm(c)] },
+      h: function (c) { return ["ساعة", "ساعتين", "ساعات"][getArabicForm(c)] },
+      m: function (c) { return ["دقيقة", "دقيقتان", "دقائق"][getArabicForm(c)] },
+      s: function (c) { return ["ثانية", "ثانيتان", "ثواني"][getArabicForm(c)]; },
+      ms: function (c) { return ["جزء من الثانية", "جزآن من الثانية", "أجزاء من الثانية"][getArabicForm(c)] },
       decimal: ','
     },
     en: {
@@ -193,6 +193,17 @@
     }
     return destination
   }
+
+    function getArabicForm(c) {
+    if (c === 2) {
+      return 1;
+    }
+    if (c > 2 && c < 11) {
+      return 2;
+    }
+    return 0;
+  }
+
 
   humanizeDuration.getSupportedLanguages = function getSupportedLanguages () {
     var result = []
