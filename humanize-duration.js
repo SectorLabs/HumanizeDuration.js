@@ -24,6 +24,17 @@
       ms: function (c) { return 'millisecond' + (c === 1 ? '' : 's') },
       decimal: '.'
     },
+    ru: {
+      y: function (c) { return ['лет', 'год', 'года'][getSlavicForm(c)] },
+      mo: function (c) { return ['месяцев', 'месяц', 'месяца'][getSlavicForm(c)] },
+      w: function (c) { return ['недель', 'неделя', 'недели'][getSlavicForm(c)] },
+      d: function (c) { return ['дней', 'день', 'дня'][getSlavicForm(c)] },
+      h: function (c) { return ['часов', 'час', 'часа'][getSlavicForm(c)] },
+      m: function (c) { return ['минут', 'минута', 'минуты'][getSlavicForm(c)] },
+      s: function (c) { return ['секунд', 'секунда', 'секунды'][getSlavicForm(c)] },
+      ms: function (c) { return ['миллисекунд', 'миллисекунда', 'миллисекунды'][getSlavicForm(c)] },
+      decimal: ','
+    },
     ur: {
       y: 'سال',
       mo: function (c) { return c === 1 ? 'مہینہ' : 'مہینے' },
@@ -34,7 +45,18 @@
       s: 'سیکنڈ',
       ms: 'ملی سیکنڈ',
       decimal: '.'
-    }
+    },
+    zh_CN: {
+      y: '年',
+      mo: '个月',
+      w: '周',
+      d: '天',
+      h: '小时',
+      m: '分钟',
+      s: '秒',
+      ms: '毫秒',
+      decimal: '.'
+    },
   }
 
   // You can create a humanizer, which returns a function with default
@@ -189,6 +211,20 @@
       }
     }
     return destination
+  }
+
+  function getSlavicForm (c) {
+    if (Math.floor(c) !== c) {
+      return 2
+    } else if ((c % 100 >= 5 && c % 100 <= 20) || (c % 10 >= 5 && c % 10 <= 9) || c % 10 === 0) {
+      return 0
+    } else if (c % 10 === 1) {
+      return 1
+    } else if (c > 1) {
+      return 2
+    } else {
+      return 0
+    }
   }
 
   humanizeDuration.getSupportedLanguages = function getSupportedLanguages () {
