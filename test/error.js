@@ -1,5 +1,5 @@
-var humanizeDuration = require('..')
-var assert = require('assert')
+const humanizeDuration = require('..')
+const assert = require('assert')
 
 describe('error handling', function () {
   it('throws an error when passed a bad language in the function', function () {
@@ -16,7 +16,7 @@ describe('error handling', function () {
   })
 
   it('throws an error when passed a bad language in a humanizer', function () {
-    var h = humanizeDuration.humanizer({
+    const h = humanizeDuration.humanizer({
       language: 'bad language'
     })
 

@@ -1,23 +1,23 @@
-var humanizeDuration = require('..')
-var humanizer = humanizeDuration.humanizer
-var assert = require('assert')
-var ms = require('ms')
+const humanizeDuration = require('..')
+const humanizer = humanizeDuration.humanizer
+const assert = require('assert')
+const ms = require('ms')
 
 describe('humanizer', function () {
   it('humanizes English when passed no arguments', function () {
-    var h = humanizer()
+    const h = humanizer()
 
     assert.equal(h(1000), '1 second')
   })
 
   it('humanizes English when passed an empty object', function () {
-    var h = humanizer({})
+    const h = humanizer({})
 
     assert.equal(h(1000), '1 second')
   })
 
   it('can change the delimiter', function () {
-    var h = humanizer({ delimiter: '+' })
+    const h = humanizer({ delimiter: '+' })
 
     assert.equal(h(0), '0 seconds')
     assert.equal(h(1000), '1 second')
@@ -25,7 +25,7 @@ describe('humanizer', function () {
   })
 
   it('can change the spacer', function () {
-    var h = humanizer({ spacer: ' whole ' })
+    const h = humanizer({ spacer: ' whole ' })
 
     assert.equal(h(0), '0 whole seconds')
     assert.equal(h(1000), '1 whole second')
@@ -33,7 +33,7 @@ describe('humanizer', function () {
   })
 
   it('can use a conjunction', function () {
-    var h = humanizer({ conjunction: ' and ' })
+    const h = humanizer({ conjunction: ' and ' })
 
     assert.equal(h(0), '0 seconds')
     assert.equal(h(1000), '1 second')
@@ -42,7 +42,7 @@ describe('humanizer', function () {
   })
 
   it('can use a conjunction without a serial comma', function () {
-    var h = humanizer({
+    const h = humanizer({
       conjunction: ' & ',
       serialComma: false
     })
@@ -53,7 +53,7 @@ describe('humanizer', function () {
   })
 
   it('can change the units', function () {
-    var h = humanizer({ units: ['d'] })
+    const h = humanizer({ units: ['d'] })
 
     assert.equal(h(0), '0 days')
     assert.equal(h(ms('6h')), '0.25 days')
@@ -61,7 +61,7 @@ describe('humanizer', function () {
   })
 
   it('can overwrite the unit measures in the initializer', function () {
-    var h = humanizer({
+    const h = humanizer({
       unitMeasures: {
         y: 10512000000,
         mo: 864000000,
@@ -81,7 +81,7 @@ describe('humanizer', function () {
   })
 
   it('can change the decimal', function () {
-    var h = humanizer({
+    const h = humanizer({
       units: ['s'],
       decimal: 'what'
     })
@@ -93,7 +93,7 @@ describe('humanizer', function () {
   })
 
   it('can do simple rounding', function () {
-    var h = humanizer({ round: true })
+    const h = humanizer({ round: true })
 
     assert.equal(h(0), '0 seconds')
     assert.equal(h(499), '0 seconds')
@@ -107,7 +107,7 @@ describe('humanizer', function () {
   })
 
   it('can do rounding with the "units" option', function () {
-    var h = humanizer({ round: true })
+    const h = humanizer({ round: true })
 
     assert.equal(h(86364000, { units: ['y', 'mo', 'w', 'd', 'h'] }), '1 day')
     assert.equal(h(1209564000, { units: ['y', 'mo', 'w', 'd', 'h'] }), '2 weeks')
@@ -116,7 +116,7 @@ describe('humanizer', function () {
   })
 
   it('can do rounding with the "largest" option', function () {
-    var h = humanizer({ round: true })
+    const h = humanizer({ round: true })
 
     assert.equal(h(3692131200000, { largest: 1 }), '117 years')
     assert.equal(h(3692131200000, { largest: 2 }), '117 years')
@@ -125,7 +125,7 @@ describe('humanizer', function () {
   })
 
   it('can ask for the largest units', function () {
-    var h = humanizer({ largest: 2 })
+    const h = humanizer({ largest: 2 })
 
     assert.equal(h(0), '0 seconds')
     assert.equal(h(1000), '1 second')
@@ -137,7 +137,7 @@ describe('humanizer', function () {
   })
 
   it('has properties which can be modified', function () {
-    var h = humanizer()
+    const h = humanizer()
 
     assert.equal(h(363000), '6 minutes, 3 seconds')
 
@@ -156,7 +156,7 @@ describe('humanizer', function () {
   })
 
   it('can add a new language', function () {
-    var h = humanizer({ language: 'cool language' })
+    const h = humanizer({ language: 'cool language' })
     h.languages['cool language'] = {
       y: function () { return 'y' },
       mo: function () { return 'mo' },
@@ -173,7 +173,7 @@ describe('humanizer', function () {
       language: 'ur'
     }), '1 سیکنڈ')
 
-    var anotherH = humanizer({
+    const anotherH = humanizer({
       language: 'cool language'
     })
     assert.throws(function () {
@@ -182,13 +182,13 @@ describe('humanizer', function () {
   })
 
   it('can overwrite an existing language', function () {
-    var h = humanizer({
+    const h = humanizer({
       language: 'en'
     })
 
     assert.equal(h(1000), '1 second')
 
-    h.languages['en'] = {
+    h.languages.en = {
       y: function () { return 'y' },
       mo: function () { return 'mo' },
       w: function () { return 'w' },
@@ -202,13 +202,13 @@ describe('humanizer', function () {
     assert.equal(h(1000), '1 s')
     assert.equal(h(15600000), '4 h, 20 m')
 
-    var anotherH = humanizer({ language: 'en' })
+    const anotherH = humanizer({ language: 'en' })
 
     assert.equal(anotherH(1000), '1 second')
   })
 
   it('can overwrite the languages property in the initializer', function () {
-    var h = humanizer({
+    const h = humanizer({
       languages: {
         en: {
           y: function () { return 'y' },

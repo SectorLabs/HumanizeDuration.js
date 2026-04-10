@@ -1,7 +1,7 @@
 // HumanizeDuration.js - https://git.io/j0HgmQ
 
 ;(function () {
-  var languages = {
+  const languages = {
     ar: {
       y: function (c) { return c === 1 ? 'سنة' : 'سنوات' },
       mo: function (c) { return c === 1 ? 'شهر' : 'أشهر' },
@@ -56,14 +56,14 @@
       s: '秒',
       ms: '毫秒',
       decimal: '.'
-    },
+    }
   }
 
   // You can create a humanizer, which returns a function with default
   // parameters.
   function humanizer (passedOptions) {
-    var result = function humanizer (ms, humanizerOptions) {
-      var options = extend({}, result, humanizerOptions || {})
+    const result = function humanizer (ms, humanizerOptions) {
+      const options = extend({}, result, humanizerOptions || {})
       return doHumanization(ms, options)
     }
 
@@ -90,25 +90,25 @@
   }
 
   // The main function is just a wrapper around a default humanizer.
-  var humanizeDuration = humanizer({})
+  const humanizeDuration = humanizer({})
 
   // doHumanization does the bulk of the work.
   function doHumanization (ms, options) {
-    var i, len, piece
+    let i, len, piece
 
     // Make sure we have a positive number.
     // Has the nice sideffect of turning Number objects into primitives.
     ms = Math.abs(ms)
 
-    var dictionary = options.languages[options.language] || languages[options.language]
+    const dictionary = options.languages[options.language] || languages[options.language]
     if (!dictionary) {
       throw new Error('No language ' + dictionary + '.')
     }
 
-    var pieces = []
+    const pieces = []
 
     // Start at the top and keep removing units, bit by bit.
-    var unitName, unitMS, unitCount
+    let unitName, unitMS, unitCount
     for (i = 0, len = options.units.length; i < len; i++) {
       unitName = options.units[i]
       unitMS = options.unitMeasures[unitName]
@@ -122,15 +122,15 @@
 
       // Add the string.
       pieces.push({
-        unitCount: unitCount,
-        unitName: unitName
+        unitCount,
+        unitName
       })
 
       // Remove what we just figured out.
       ms -= unitCount * unitMS
     }
 
-    var firstOccupiedUnitIndex = 0
+    let firstOccupiedUnitIndex = 0
     for (i = 0; i < pieces.length; i++) {
       if (pieces[i].unitCount) {
         firstOccupiedUnitIndex = i
@@ -139,7 +139,7 @@
     }
 
     if (options.round) {
-      var ratioToLargerUnit, previousPiece
+      let ratioToLargerUnit, previousPiece
       for (i = pieces.length - 1; i >= 0; i--) {
         piece = pieces[i]
         piece.unitCount = Math.round(piece.unitCount)
@@ -156,7 +156,7 @@
       }
     }
 
-    var result = []
+    const result = []
     for (i = 0, pieces.length; i < len; i++) {
       piece = pieces[i]
       if (piece.unitCount) {
@@ -180,17 +180,17 @@
   }
 
   function render (count, type, dictionary, options) {
-    var decimal
-    if (options.decimal === void 0) {
+    let decimal
+    if (options.decimal === undefined) {
       decimal = dictionary.decimal
     } else {
       decimal = options.decimal
     }
 
-    var countStr = count.toString().replace('.', decimal)
+    const countStr = count.toString().replace('.', decimal)
 
-    var dictionaryValue = dictionary[type]
-    var word
+    const dictionaryValue = dictionary[type]
+    let word
     if (typeof dictionaryValue === 'function') {
       word = dictionaryValue(count)
     } else {
@@ -201,11 +201,11 @@
   }
 
   function extend (destination) {
-    var source
-    for (var i = 1; i < arguments.length; i++) {
+    let source
+    for (let i = 1; i < arguments.length; i++) {
       source = arguments[i]
-      for (var prop in source) {
-        if (source.hasOwnProperty(prop)) {
+      for (const prop in source) {
+        if (Object.prototype.hasOwnProperty.call(source, prop)) {
           destination[prop] = source[prop]
         }
       }
@@ -228,9 +228,9 @@
   }
 
   humanizeDuration.getSupportedLanguages = function getSupportedLanguages () {
-    var result = []
-    for (var language in languages) {
-      if (languages.hasOwnProperty(language)) {
+    const result = []
+    for (const language in languages) {
+      if (Object.prototype.hasOwnProperty.call(languages, language)) {
         result.push(language)
       }
     }
