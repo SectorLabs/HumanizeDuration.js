@@ -1,0 +1,72 @@
+0$0 milisegundos
+1$1 milisegundo
+2$2 milisegundos
+5$5 milisegundos
+12$12 milisegundos
+420$420 milisegundos
+500$500 milisegundos
+1000$1 segundo
+1500$1 segundo+500 milisegundos
+2000$2 segundos
+2500$2 segundos+500 milisegundos
+3000$3 segundos
+1001$1 segundo+1 milisegundo
+1002$1 segundo+2 milisegundos
+2001$2 segundos+1 milisegundo
+2003$2 segundos+3 milisegundos
+1200$1 segundo+200 milisegundos
+6900$6 segundos+900 milisegundos
+30000$30 segundos
+60000$1 minuto
+90000$1 minuto+30 segundos
+120000$2 minutos
+150000$2 minutos+30 segundos
+180000$3 minutos
+61000$1 minuto+1 segundo
+78000$1 minuto+18 segundos
+61001$1 minuto+1 segundo+1 milisegundo
+61005$1 minuto+1 segundo+5 milisegundos
+62001$1 minuto+2 segundos+1 milisegundo
+62005$1 minuto+2 segundos+5 milisegundos
+121001$2 minutos+1 segundo+1 milisegundo
+121007$2 minutos+1 segundo+7 milisegundos
+138001$2 minutos+18 segundos+1 milisegundo
+138006$2 minutos+18 segundos+6 milisegundos
+1800000$30 minutos
+3600000$1 hora
+5400000$1 hora+30 minutos
+7200000$2 horas
+9000000$2 horas+30 minutos
+10800000$3 horas
+3660000$1 hora+1 minuto
+3720000$1 hora+2 minutos
+10860000$3 horas+1 minuto
+11040000$3 horas+4 minutos
+43200000$12 horas
+86400000$1 día
+129600000$1 día+12 horas
+172800000$2 días
+216000000$2 días+12 horas
+259200000$3 días
+302400000$3 días+12 horas
+604800000$1 semana
+907200000$1 semana+3 días+12 horas
+1209600000$2 semanas
+1512000000$2 semanas+3 días+12 horas
+1814400000$3 semanas
+1314900000$2 semanas+1 día+5 horas+15 minutos
+2629800000$1 mes
+3944700000$1 mes+2 semanas+1 día+5 horas+15 minutos
+5259600000$2 meses
+6574500000$2 meses+2 semanas+1 día+5 horas+15 minutos
+7889400000$3 meses
+15778800000$6 meses
+31557600000$1 año
+47336400000$1 año+6 meses
+63115200000$2 años
+78894000000$2 años+6 meses
+94672800000$3 años
+-420$420 milisegundos
+0.12$0,12 milisegundos
+1.5$1,5 milisegundos
+420.69$420,69 milisegundos

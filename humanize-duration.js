@@ -13,6 +13,17 @@
       ms: function (c) { return c === 1 ? 'جزء من الثانية' : 'أجزاء من الثانية' },
       decimal: ','
     },
+    de: {
+      y: function (c) { return 'Jahr' + (c === 1 ? '' : 'e') },
+      mo: function (c) { return 'Monat' + (c === 1 ? '' : 'e') },
+      w: function (c) { return 'Woche' + (c === 1 ? '' : 'n') },
+      d: function (c) { return 'Tag' + (c === 1 ? '' : 'e') },
+      h: function (c) { return 'Stunde' + (c === 1 ? '' : 'n') },
+      m: function (c) { return 'Minute' + (c === 1 ? '' : 'n') },
+      s: function (c) { return 'Sekunde' + (c === 1 ? '' : 'n') },
+      ms: function (c) { return 'Millisekunde' + (c === 1 ? '' : 'n') },
+      decimal: ','
+    },
     en: {
       y: function (c) { return 'year' + (c === 1 ? '' : 's') },
       mo: function (c) { return 'month' + (c === 1 ? '' : 's') },
@@ -23,6 +34,50 @@
       s: function (c) { return 'second' + (c === 1 ? '' : 's') },
       ms: function (c) { return 'millisecond' + (c === 1 ? '' : 's') },
       decimal: '.'
+    },
+    es: {
+      y: function (c) { return 'año' + (c === 1 ? '' : 's') },
+      mo: function (c) { return 'mes' + (c === 1 ? '' : 'es') },
+      w: function (c) { return 'semana' + (c === 1 ? '' : 's') },
+      d: function (c) { return 'día' + (c === 1 ? '' : 's') },
+      h: function (c) { return 'hora' + (c === 1 ? '' : 's') },
+      m: function (c) { return 'minuto' + (c === 1 ? '' : 's') },
+      s: function (c) { return 'segundo' + (c === 1 ? '' : 's') },
+      ms: function (c) { return 'milisegundo' + (c === 1 ? '' : 's') },
+      decimal: ','
+    },
+    fr: {
+      y: function (c) { return 'an' + (c >= 2 ? 's' : '') },
+      mo: 'mois',
+      w: function (c) { return 'semaine' + (c >= 2 ? 's' : '') },
+      d: function (c) { return 'jour' + (c >= 2 ? 's' : '') },
+      h: function (c) { return 'heure' + (c >= 2 ? 's' : '') },
+      m: function (c) { return 'minute' + (c >= 2 ? 's' : '') },
+      s: function (c) { return 'seconde' + (c >= 2 ? 's' : '') },
+      ms: function (c) { return 'milliseconde' + (c >= 2 ? 's' : '') },
+      decimal: ','
+    },
+    it: {
+      y: function (c) { return c === 1 ? 'anno' : 'anni' },
+      mo: function (c) { return c === 1 ? 'mese' : 'mesi' },
+      w: function (c) { return c === 1 ? 'settimana' : 'settimane' },
+      d: function (c) { return c === 1 ? 'giorno' : 'giorni' },
+      h: function (c) { return c === 1 ? 'ora' : 'ore' },
+      m: function (c) { return c === 1 ? 'minuto' : 'minuti' },
+      s: function (c) { return c === 1 ? 'secondo' : 'secondi' },
+      ms: function (c) { return c === 1 ? 'millisecondo' : 'millisecondi' },
+      decimal: ','
+    },
+    nl: {
+      y: 'jaar',
+      mo: function (c) { return c === 1 ? 'maand' : 'maanden' },
+      w: function (c) { return c === 1 ? 'week' : 'weken' },
+      d: function (c) { return c === 1 ? 'dag' : 'dagen' },
+      h: 'uur',
+      m: function (c) { return c === 1 ? 'minuut' : 'minuten' },
+      s: function (c) { return c === 1 ? 'seconde' : 'seconden' },
+      ms: function (c) { return c === 1 ? 'milliseconde' : 'milliseconden' },
+      decimal: ','
     },
     ru: {
       y: function (c) { return ['лет', 'год', 'года'][getSlavicForm(c)] },
